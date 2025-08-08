@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-    <link rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
@@ -22,11 +23,40 @@
 	    font-size: 16px;
         }
       
-        p {
+        p{
            margin-right: 100px;
            margin-left: 0px;
-          }   
+          } 
+        h3{
+           margin-right: 100px;
+           margin-left: 0px;
+          }
+        h4{
+           margin-right: 100px;
+           margin-left: 0px;
+          }
+
+      details{              
+              margin-right: 100px;
+              margin-left: 0px;
+              padding: 0.5em;
+              border: 0px solid #ccc;
+              border-radius: 5px;  
+              <!-- margin: 1em 0; background-color: #f9f9f9; -->            
+              font-family: Arial, sans-serif;
+             }
+      
+    summary{
+            font-weight: bold;
+            cursor: pointer;
+           }
+
+    summary::-webkit-details-marker {
+             margin-right: 0px;
+           
+            } 
      </style>
+
    <title> Research </title>
 </head>
 
@@ -40,42 +70,31 @@
     <ul class="nav navbar-nav">
       <li class="nav-item" id="Home"><a href="index.html">Home</a></li>
       <li class="nav-item" id="Research"><a href="research.html"> Research </a></li>
-      <li class="nav-item" id="CV"><a href="images/Bruno-Monsia-cv.pdf"> CV </a></li>
-      <li class="nav-item" id="contact"><a href="research.html">Contact</a></li>
-    </ul>
-     <form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-     </form>
+      <li class="nav-item" id="contact"><a href="contact.html">Contact</a></li>
+      <li class="nav-item" id="blogs"><a href="research.html">Blog</a></li>
+    </ul>     
   </div>
 </nav>
 
 <br><br>
 
-<h1>My main research <a name="top"></a> </h1>
+<h1> Papers and work in progress <a name="top"></a> </h1>
 
-<h3>A Multinomial compact-interval restricted Boltzmann machine </h3> 
-<p>Restricted Boltzmann Machines (RBM) are undirected probabilistic graphical models that can be interpreted as stochastic neural networks. In their basic formulation, Boltzmann Machines (BM) involve binary variables. They have found applications in a wide range of learning problems. However, RBMs are generally used as a preliminary phase for other algorithms, providing either data preprocessing or an initialization method for feedforward neural network classifiers. They are not typically considered a standalone solution for classification problems. In this paper, we proposed several variants of the RBM in which the observed variables are assumed to be continuous and bounded. We demonstrated that the underlying models could solve high-dimensional data classification problems without relying on another classification algorithm. The experiments showed that, in addition to having good characteristics as generative data models, the proposed models possess excellent predictive power, outperforming certain standard models commonly used for classification tasks.</p>
+<h3> A Multinomial compact-interval restricted Boltzmann machine, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3> 
+<p>Restricted Boltzmann Machines (RBM) are undirected probabilistic graphical models that can be interpreted as stochastic neural networks. In their basic formulation, Boltzmann Machines (BM) involve binary variables. They have found applications in a wide range of learning problems. However, RBMs are generally used as a preliminary phase for other algorithms, providing either data preprocessing or an initialization method for feedforward neural network classifiers. They are not typically considered a standalone solution for classification problems. In this paper, we proposed several variants of the RBM in which the observed variables are assumed to be continuous and bounded. We demonstrated that the underlying models could solve high-dimensional data classification problems without relying on another classification algorithm. The experiments showed that, in addition to having good characteristics as generative data models, the proposed models possess excellent predictive power, outperforming certain standard models commonly used for classification tasks. </p>
 
-<h3>Learning Gaussian Restricted Boltzmann Machine using tensorial decompositions</h3>
+<h3> Learning Gaussian Restricted Boltzmann Machine using tensorial decompositions, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3>
+<p> The Boltzmann machine and its variants have demonstrated excellent performance in several object classification and recognition tasks. It involves a very large number of parameters, which complicates training and limits its use in devices with low memory capacity. An important research problem is how to compress the parameters to reduce the storage requirements and, eventually, the training time of the machine. This work focuses on storage compression for efficient inference of the restricted Gaussian Boltzmann machine. Different tensor formats for modeling the interaction terms or weights of a restricted Gaussian Boltzmann machine are proposed and investigated. The objective is to reduce the number of model parameters to save time and memory during training and predictions. It is shown that the weight matrix of the Boltzmann machine, as in the case of several neural network modules, is highly redundant and that by limiting its matrix rank, it is possible to significantly reduce the number of parameters without significantly decreasing the model’s prediction rate. Particularly high performance is achieved with the so-called “matrix product operator” tensor format. </p>
 
-<h3>Compact intervals restricted Boltzmann machine mixture</h3>
+<h3> Compact intervals restricted Boltzmann machine mixture, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3>
 
-<h3>Categorical variables selection in risk modeling</h3>
+<p> Boltzmann Machines (BMs) and their variants have traditionally been used as initialization tools for supervised learning models, notably feedforward neural networks. In such settings, they mainly serve as feature extractors or pre-training mechanisms, without being directly employed for classification or clustering tasks. In previous work, we proposed a supervised model based on the Compact Interval Restricted Boltzmann Machine (CIRBM) to address this limitation partially. Despite its potential, a major obstacle remains: the intractability of the normalization constant (partition function) in the Boltzmann distribution, which hinders both inference and parameter estimation. This paper tackles the intractability of the partition function in the CIRBM framework by introducing and evaluating several estimation techniques. We assess the accuracy and computational efficiency of each method through extensive empirical studies. Among the proposed approaches, the Normalization Function Ratio (NFR) estimator demonstrates the best trade-off between precision and computational cost, offering narrow confidence intervals and consistent performance across various settings. Building upon these results, we develop a novel mixture model of Compact Interval Restricted Boltzmann Machines (MixCIRBM) for clustering applications. The model is trained via the Expectation-Maximization (EM) algorithm, combined with gradient-based optimization of the model parameters. Experimental results indicate that the proposed MixCIRBM model outperforms the classical Gaussian Mixture Model (GMM) and K-means algorithm, especially in high-dimensional scenarios, demonstrating its effectiveness as a robust clustering tool. </p>
 
+<h3> Categorical variables selection in risk modeling, <span style="font-size: 16px;"> Bruno Monsia </span> </h3>
 
-<p> As you can see, another powerful aspect of the border properties is that they can be altered either as a whole (so that all four edges look the same) or individually. To alter the characteristics individually, you simply add the side specification (top, bottom, right, or left) to the border property, after “border” and before any final characteristic. To give you an idea how this is done, consider the following example and Figure 6-6. Here, I’ve created a class called “headshot” and then set the border properties in my style sheet. </p>
+<p> In insurance risk modeling, selecting relevant categorical variables is a crucial step in developing accurate, parsimonious, and interpretable predictive models. Indeed, categorical features present different challenges, including high cardinality, multicollinearity, and complex interactions with continuous variables. This study examines statistical and machine learning-based approaches for selecting categorical predictors in insurance risk models. Traditional methods like chi-square testing, information value, and weight of evidence are evaluated alongside modern regularization techniques and tree-based model importance metrics. Special attention is given to encoding strategies, feature engineering, and handling of rare categories. Using real-world insurance datasets, we demonstrate how informed categorical variable selection improves model performance and interpretability of the experimented models. Our findings offer practical guidelines for actuaries, data scientists, and risk professionals seeking to enhance predictive modeling practices in the finance field. </p>
 
-<p> Developing countries face major challenges in education. The educational situation of African populations is particularly worrying. Indeed, the school exclusion rate remains the highest in sub-Saharan African countries. According to UNESCO, Over one-fifth of primary-age children are out of school, and almost 60 percent of youth between the ages of 15 and 17 are not in school. In addition, this exclusion rate is generally higher among girls. This observation is due to several reasons. First, the state of household poverty combined with the high costs of education constitute determining factors for the low education rate in Africa. Second, these countries are limited in school infrastructure characterized by overcrowding in classes, which does not motivate students to go to classes. Although some countries have made an effort to provide free primary school fees, there is a lack of monitoring of students, who are sometimes left to their own devices. </p>
-
-<p> My training in statistics has allowed me to acquire strong expertise in statistical analysis and data modeling. I have frequently worked with large-scale data, particularly in the fields of health, education, and linguistics, which has provided me with significant experience in data analysis. Additionally, my research on machine learning models has enabled me to build a solid expertise in this area, as well as proficiency in programming and statistical analysis tools such as SPSS, STATA, Python, R, and others. My experience as a statistics teacher for social sciences, survival analysis, and optometry further enhances my ability to meet expectations in data analysis. Moreover, my various experiences within the Statistical Consulting Service of the Department of Statistics at the University of Montreal, as well as in various research centers, have equipped me with the skills necessary to overcome the challenges of this new post. Creative, dynamic, and discreet, I also appreciate teamwork, where I can contribute my experience and expertise to the group. The dynamism and excellence of your organization would provide me with the opportunity to grow in an environment that perfectly aligns with my professional aspirations.  </p>
-
-<ol>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ol> 
+<h3> Superimposed Gaussian mixtures model to characterize the heterogeneity of neurobiological alterations in psycho-pathology, <span style="font-size: 16px;"> <a href="https://criusmm.ciusss-estmtl.gouv.qc.ca/fr/chercheur/pierre-orban">Pierre Orban</a>, <a href="https://www.gerad.ca/fr/people/alejandro-murua">Alejandro Murua</a>  & Bruno Monsia </span> </h3>
 
 </body>
 
