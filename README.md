@@ -10,32 +10,30 @@
 
 ## 🌍 English Version  
 
-🎓 PhD Candidate in **Statistics** @ University of Montreal  
+🎓 PhD in **Statistics** @ University of Montreal  
 📊 Statistician | Data Scientist | Consultant  
 🚀 Co-founder of **KiDs A.I. Inc.**  
 
 ---
 
-### 🔬 Research & Interests  
+### Research & Interests  
 
-- 📖 Partition function estimation in Boltzmann Machines  
-- 🧮 Graphical models & high-dimensional statistics  
-- 🏥 Healthcare analytics & biostatistics  
-- 🤖 Machine Learning | Deep Learning | Bayesian Methods  
+-  Partition function estimation in Boltzmann Machines  
+-  Graphical models & high-dimensional statistics  
+-  Healthcare analytics & biostatistics  
+-  Machine Learning | Deep Learning | Bayesian Methods  
 
 ---
-
-### ⚡ Tech Stack  
-
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)  
-![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)  
-![SQL](https://img.shields.io/badge/SQL-003B57?logo=sqlite&logoColor=white)  
-![Julia](https://img.shields.io/badge/Julia-9558B2?logo=julia&logoColor=white)  
-![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)  
-![MATLAB](https://img.shields.io/badge/MATLAB-FF8C00?logo=mathworks&logoColor=white)  
-
+  
+### 🛠️ Technical Skills  
 **Libraries**: scikit-learn | TensorFlow | PyTorch | XGBoost  
-**Tools**: Git | Docker | Power BI | Tableau | Spark  
+**Tools**: Git | Power BI | Tableau | Spark 
+**Languages:** Python, R, SAS, Stata, MATLAB, SQL, LaTeX  
+- **ML/AI Libraries:** scikit-learn, TensorFlow, PyTorch, Keras, XGBoost  
+- **Tools:** Git, Docker, Power BI, Tableau, Spark  
+- **Methods:** Supervised & Unsupervised ML, Causal Inference, Bayesian Modeling, Applied Statistics  
+
+
 
 ---
 
@@ -46,15 +44,15 @@
 
 ---
 
-### 📫 Connect  
+### 📫 Contact  
 
-🌍 [Website](https://monsiabruno.github.io/)  
-💼 [LinkedIn](https://www.linkedin.com/)  
-✉️ your.email@example.com  
+🌍 Personal Website: [Website](https://monsiabruno.github.io/)  
+💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/bruno-monsia)  
+✉️ bruno.monsia@umontreal.ca  
 
 ---
 
-✨ *Exploring data to solve real-world problems — always open to research and consulting collaborations.*  
+✨ *Always open to academic collaborations, research projects, and consulting opportunities in data science & statistics.*  
 
 ---
 
@@ -75,17 +73,12 @@
 
 ---
 
-### ⚡ Compétences  
+### 🛠️ Compétences 
+- **Langages :** Python, R, SAS, Stata, MATLAB, SQL, LaTeX
+- **Bibliothèques ML/AI :** scikit-learn, TensorFlow, PyTorch, Keras, XGBoost  
+- **Outils :** Git, Power BI, Tableau, Spark  
+- **Méthodes :** Machine Learning supervisé & non supervisé, inférence causale, modèles bayésiens, statistiques appliquées  
 
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)  
-![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)  
-![SQL](https://img.shields.io/badge/SQL-003B57?logo=sqlite&logoColor=white)  
-![Julia](https://img.shields.io/badge/Julia-9558B2?logo=julia&logoColor=white)  
-![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)  
-![MATLAB](https://img.shields.io/badge/MATLAB-FF8C00?logo=mathworks&logoColor=white)  
-
-**Bibliothèques** : scikit-learn | TensorFlow | PyTorch | XGBoost  
-**Outils** : Git | Docker | Power BI | Tableau | Spark  
 
 ---
 
@@ -99,9 +92,9 @@
 ### 📫 Me contacter  
 
 🌍 [Site personnel](https://monsiabruno.github.io/)  
-💼 [LinkedIn](https://www.linkedin.com/)  
-✉️ ton.email@exemple.com  
+💼 [LinkedIn]([https://www.linkedin.com/](https://www.linkedin.com/in/bruno-monsia))  
+✉️ bruno.monsia@umontreal.ca  
 
 ---
 
-✨ *Explorer les données pour résoudre des problèmes réels — toujours ouvert aux collaborations en recherche et en conseil.*  
+✨ *Toujours ouvert aux collaborations académiques, projets de recherche et missions de conseil en data science & statistiques.*  
