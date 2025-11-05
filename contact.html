@@ -2,109 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Personal website of Bruno Monsia, a data scientist and statistician.">       
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact page of Bruno Monsia, Ph.D. in Statistics and Data Science.">
+  <title>Contact | Bruno Monsia</title>
 
-    <title> Contact </title>
-        
-    <link rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-    <style>
-       body {
-	    margin-top: 0;
-            margin-left: 250px;
-            margin-right: 250px;
-	    margin-bottom: 200px;
-	    text-align: justify;
-	    justify-content: center;
-            align-items: center;
-	    font-size: 16px;
-          }
-        p {
-           margin-right: 150px;
-           margin-left: 0px;
-          }
-        .no-bullets { 
-                     list-style-type: none;
-                     }
-         .profile {
-                   position: relative;
-                   display: flex;
-                   align-items: center;
-                   justify-content: flex-end;
-                   height: 20px;
-                   width: 50%;       
-                   }
-         .button1 {width: 50%;}
-    </style>
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      color: #111;
+      background-color: #fff;
+      text-align: justify;
+      padding-bottom: 70px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4 {
+      color: #000;
+      font-weight: 600;
+    }
+
+    a {
+      color: #000;
+      }
+
+    a:hover {
+      color: #555;
+    }
+
+    /* Navbar */   
+
+    .navbar {
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+      }
+
+      .navbar .navbar-brand,
+      .navbar-nav li a {
+        color: #000 !important;
+      }
+
+      .navbar-nav li a:hover,
+      .navbar-nav li.active a {
+        background-color: #bfbfbf !important;
+        color: #000 !important;
+      } 
+    
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 40px 0;
+    }
+
+    /* Contact form */
+    form {
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .no-bullets {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .social-icons img {
+      margin-right: 10px;
+      transition: opacity 0.3s;
+    }
+
+    .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      color: #444;
+      text-align: center;
+      font-size: 14px;
+      padding: 12px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 15px; }
+      .container { padding: 15px; }
+    }
+  </style>
 </head>
+
 <body>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://monsiabruno.github.io/"> Bruno Monsia </a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="nav-item" id="Home"><a href="index.html">Home</a></li>
-      <li class="nav-item" id="Research"><a href="research.html"> Research </a></li>
-      <li class="nav-item" id="contact"><a href="contact.html">Contact</a></li>
-      <li class="nav-item" id="blogs"><a href="blogs.html">Blog</a></li>
-    </ul>
-    </div>
-</nav>
-
-<br>  <br> 
-
-<h4>Please contact me by submitting a form or using the following informations.</h4> 
-
-<br><br>
-
-<div class="container">     
-  <form target="_blank" action="https://formsubmit.co/monsiabruno@gmail.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="profile">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <br>
-        <div class="profile">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-        <br>
-        <div class="profile">
-          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Bruno Monsia</a>
+      </div>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li class="active"><a href="contact.html">Contact</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+        </ul>
       </div>
     </div>
-    <br> <br> <br> <br><br>
-    <div class="profile">
-      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+  </nav>
+
+  <!-- Content -->
+  <div class="container">
+    <h2>Contact</h2>
+    <hr>
+
+    <h4>Please contact me using the form below or the information provided.</h4>
+    <br>
+
+    <!-- Contact Form -->
+    <form target="_blank" action="https://formsubmit.co/monsiabruno@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <hr>
+
+    <h4>Contact Information</h4>
+    <ul class="no-bullets">
+      <li><strong>Email:</strong> <a href="mailto:bruno.monsia@umontreal.ca">bruno.monsia@umontreal.ca</a></li>
+      <li><strong>Office:</strong> André Aisenstadt Building, Office 6213, #2</li>
+      <li><strong>Address:</strong> 2920 Tour Road, Montreal, QC H3T 1N8, Canada</li>
+      <li><strong>Phone:</strong> +1 (514) 343-6133</li>
+    </ul>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/bruno-monsia" target="_blank">
+        <img src="images/linkedin.jpg" width="70" height="45" alt="LinkedIn link">
+      </a>
+      <a href="https://github.com/monsiabruno" target="_blank">
+        <img src="images/GitHub2.png" width="42" height="40" alt="GitHub link">
+      </a>
+      <a href="https://x.com/MONSIABruno" target="_blank">
+        <img src="images/Xtweeter.png" width="65" height="35" alt="Twitter link">
+      </a>
     </div>
-    <br> <br> <br> <br><br>
-    <button type="submit" class="button1">Click here to send your message</button>
-  </form>
-</div>
+  </div>
 
-<br><br>
-
-<ul class="no-bullets">
-  <li>Email: <a href= "mailto: bruno.monsia@umontreal.ca"> bruno.monsia@umontreal.ca </a></li>
-  <li>Office: André Aisenstadt building, office 6213, #2.</li>
-  <li>Adress: 2920 Tour Road, Montreal, QC H3T 1N8, Canada.</li>
-  <li>Phone: +1 (514) 343-6133.</li>
-  <li> <a href="https://www.linkedin.com/in/bruno-monsia" target="_blank">
-<img src="images/linkedin.jpg" width="80" height="50" alt="linkedin link" border="0"/>  </a> <a href="https://github.com/monsiabruno" target="_blank">
-<img src="images/GitHub2.png" width="42" height="40" alt="GitHub link" border="0"/>  </a> <a href="https://x.com/MONSIABruno" target="_blank">
-<img src="images/Xtweeter.png" width="65" height="35" alt="tweeter" border="0"/>
- </li>
-</ul>
-
+  <!-- Footer -->
+  <footer>
+    © 2025 Bruno Monsia – All rights reserved
+  </footer>
 
 </body>
 </html>
