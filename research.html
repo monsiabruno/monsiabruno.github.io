@@ -1,103 +1,216 @@
 <!DOCTYPE html>
-<html>
-
-<head> <!-- Comments: Document Header Starts -->
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <meta name="description" content="Personal website of Bruno Monsia, a data scientist and statistician.">  
-     <title> Research </title>
-     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research | Bruno Monsia</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-   <style>
-    body{
-	    margin-top: 0;
-            margin-left: 250px;
-            margin-right: 250px;
-	    margin-bottom: 200px;
-	    text-align: justify;
-	    justify-content: center;
-            align-items: center;
-	    font-size: 16px;
-        }
+    <style>
+      body {
+        background-color: #fff;
+        color: #000;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      .navbar {
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0;
+      }
+
+      .navbar .navbar-brand,
+      .navbar-nav li a {
+        color: #000 !important;
+      }
+
+      .navbar-nav li a:hover,
+      .navbar-nav li.active a {
+        background-color: #bfbfbf !important;
+        color: #000 !important;
+      }
+
+      h2, h3 {
+        font-weight: 600;
+      }
+
+      h2 {
+        border-bottom: 2px solid #bfbfbf;
+        padding-bottom: 8px;
+        margin-top: 40px;
+      }
+
+      .research-item {
+        border-left: 4px solid #bfbfbf;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        background-color: #fafafa;
+        border-radius: 4px;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .research-item:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .research-item h3 {
+        margin-top: 0;
+        font-weight: 600;
+      }
+
+      .research-item p {
+        margin-bottom: 10px;
+      }
+
+      .authors {
+        font-style: italic;
+        color: #333;
+        margin-bottom: 2px;
+      }
+
+      .date {
+        color: #555;
+        font-size: 0.9em;
+      }
       
-        p{
-           margin-right: 100px;
-           margin-left: 0px;
-          } 
-        h3{
-           margin-right: 100px;
-           margin-left: 0px;
-          }
-        h4{
-           margin-right: 100px;
-           margin-left: 0px;
-          }
+       .abstract {        
+        font-size: 0.9em;
+      }
 
-      details{              
-              margin-right: 100px;
-              margin-left: 0px;
-              padding: 0.5em;
-              border: 0px solid #ccc;
-              border-radius: 5px;  
-              <!-- margin: 1em 0; background-color: #f9f9f9; -->            
-              font-family: Arial, sans-serif;
-             }
+
+      footer {
+        text-align: center;
+        margin: 50px 0 20px 0;
+        color: #555;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://monsiabruno.github.io/">Bruno Monsia</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="research.html">Research</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2> <strong> Research </strong> </h2>
+      <hr>
+
+      <h3>Research Interests</h3>
+      <p>
+        My research focuses on the intersection of <strong>statistics</strong>, <strong>machine learning</strong>, and <strong>data science</strong>.  
+        I am particularly interested in developing and applying statistical models to address complex problems in social sciences, finance, and health data.  
+        My areas of interest include:
+      </p>
+      <ul>        
+        <li>Graphical models and probabilistic networks</li>
+        <li>Stochastic optimization methods in statistics</li>
+        <li>Applications of machine learning in biostatistics and finance</li>
+        <li>Bayesian statistical modeling</li>
+        <li>Causal inference and treatment effect estimation</li>
+      </ul>
+
+      <p>
+        Below are some of my research works and academic publications. Each
+        entry includes the authors, publication date, a short abstract, and a
+        link to the full text or related resource.
+      </p>
+
+      <hr>
+
+      <!-- Publications & Working Papers Section -->
+      <h3>Publications & Working Papers</h3>
+
+      <div class="research-item">
+        <h4>
+          <a href="papers/MCiRBM.pdf" target="_blank"
+            >A Multinomial compact-interval restricted Boltzmann machine</a>
+        </h4>
+        <p class="authors">Bruno Monsia & Alejandro Murua</p>
+        <!-- <p class="date"> Published in 2025 </p> -->        
+        <p class="abstract">
+          Restricted Boltzmann Machines (RBM) are undirected probabilistic graphical model that can be interpreted as stochastic neural networks. In their basic formulation, Boltzmann Machines (BM) involve binary variables. They have found applications in a wide range of learning problems. However, RBMs are generally used as a preliminary phase for other algorithms, providing either data preprocessing or an initialization method for feedforward neural network classifiers. They are not typically considered a standalone solution for classification problems. In this paper, we proposed several variants of the RBM in which the observed variables are assumed to be continuous and bounded. We demonstrated that the underlying models could solve high-dimensional data classification problems without relying on another classification algorithm. The experiments showed that, in addition to having good characteristics as generative data models, the proposed models possess excellent predictive power, outperforming certain standard models commonly used for classification tasks.
+        </p>
+        <a href="papers/MCiRBM.pdf" target="_blank">[Read PDF]</a>
+      </div>
+
+      <div class="research-item">
+        <h4>
+          <a href="papers/TGRBM.pdf" target="_blank"
+            > Learning Gaussian Restricted Boltzmann Machine using tensorial decompositions</a>
+        </h4>
+        <p class="authors">Bruno Monsia & Alejandro Murua</p>
+        <!-- <p class="date">Published in 2024</p> -->        
+        <p class="abstract">
+          The Boltzmann machine and its variants have demonstrated excellent performance in several object classification and recognition tasks. It involves a very large number of parameters, which complicates training and limits its use in devices with low memory capacity. An important research problem is how to compress the parameters to reduce the storage requirements and, eventually, the training time of the machine. This work focuses on storage compression for efficient inference of the restricted Gaussian Boltzmann machine. Different tensor formats for modeling the interaction terms or weights of a restricted Gaussian Boltzmann machine are proposed and investigated. The objective is to reduce the number of model parameters to save time and memory during training and predictions. It is shown that the weight matrix of the Boltzmann machine, as in the case of several neural network modules, is highly redundant and that by limiting its matrix rank, it is possible to significantly reduce the number of parameters without significantly decreasing the model’s prediction rate. Particularly high performance is achieved with the so-called “matrix product operator” tensor format. 
+        </p>
+        <a href="papers/TGRBM.pdf" target="_blank">[Read PDF]</a>
+      </div>
+
+      <div class="research-item">
+        <h4>
+          <a href="papers/MixCiRBM.pdf" target="_blank"
+            >Compact intervals restricted Boltzmann machine mixture</a>
+        </h4>
+        <p class="authors">Bruno Monsia & Alejandro Murua</p>
+        <!-- <p class="date">Published in 2024</p> -->
+        <p class="abstract">
+          Boltzmann Machines (BMs) and their variants have traditionally been used as initialization tools for supervised learning models, notably feedforward neural networks. In such settings, they mainly serve as feature extractors or pre-training mechanisms, without being directly employed for classification or clustering tasks. In previous work, we proposed a supervised model based on the Compact Interval Restricted Boltzmann Machine (CIRBM) to address this limitation partially. Despite its potential, a major obstacle remains: the intractability of the normalization constant (partition function) in the Boltzmann distribution, which hinders both inference and parameter estimation. This paper tackles the intractability of the partition function in the CIRBM framework by introducing and evaluating several estimation techniques. We assess the accuracy and computational efficiency of each method through extensive empirical studies. Among the proposed approaches, the Normalization Function Ratio (NFR) estimator demonstrates the best trade-off between precision and computational cost, offering narrow confidence intervals and consistent performance across various settings. Building upon these results, we develop a novel mixture model of Compact Interval Restricted Boltzmann Machines (MixCIRBM) for clustering applications. The model is trained via the Expectation-Maximization (EM) algorithm, combined with gradient-based optimization of the model parameters. Experimental results indicate that the proposed MixCIRBM model outperforms the classical Gaussian Mixture Model (GMM) and K-means algorithm, especially in high-dimensional scenarios, demonstrating its effectiveness as a robust clustering tool.
+        </p>
+        <a href="papers/MixCiRBM.pdf" target="_blank">[Read PDF]</a>
+      </div>
       
-    summary{
-            font-weight: bold;
-            cursor: pointer;
-           }
+      <div class="research-item">
+        <h4>
+          <a href="papers/CategoricalSelect.pdf" target="_blank"
+            >Categorical variables selection in risk modeling</a>
+        </h4>
+        <p class="authors">Bruno Monsia </p>
+        <!-- <p class="date">Working paper, 2025</p> -->        
+        <p class="abstract">
+          In insurance risk modeling, selecting relevant categorical variables is a crucial step in developing accurate, parsimonious, and interpretable predictive models. Indeed, categorical features present different challenges, including high cardinality, multicollinearity, and complex interactions with continuous variables. This study examines statistical and machine learning-based approaches for selecting categorical predictors in insurance risk models. Traditional methods like chi-square testing, information value, and weight of evidence are evaluated alongside modern regularization techniques and tree-based model importance metrics. Special attention is given to encoding strategies, feature engineering, and handling of rare categories. Using real-world insurance datasets, we demonstrate how informed categorical variable selection improves model performance and interpretability of the experimented models. Our findings offer practical guidelines for actuaries, data scientists, and risk professionals seeking to enhance predictive modeling practices in the finance field.
+        </p>
+        <a href="papers/CategoricalSelect.pdf" target="_blank">[View draft]</a>
+      </div>
 
-    summary::-webkit-details-marker {
-             margin-right: 0px;
-           
-            } 
-     </style>
+       <h4>
+          <a href="papers/graphical_models_draft.pdf" target="_blank"
+            >Superimposed Gaussian mixtures model to characterize the heterogeneity of neurobiological alterations in psycho-pathology,</a>
+        </h4>
+        <p class="authors">Pierre Orban, Murua Alejandro, Bruno Monsia </p>
+        <!-- <p class="date">Working paper, 2025</p> -->  
+       </div>
 
-</head>
 
-<body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://monsiabruno.github.io/"> Bruno Monsia </a>
+      <footer> © 2025 Bruno Monsia. All rights reserved.</footer>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="nav-item" id="Home"><a href="index.html">Home</a></li>
-      <li class="nav-item" id="Research"><a href="research.html"> Research </a></li>
-      <li class="nav-item" id="contact"><a href="contact.html">Contact</a></li>
-      <li class="nav-item" id="blogs"><a href="blogs.html">Blog</a></li>
-    </ul>     
-  </div>
-</nav>
+  </body>
+</html>
 
-<br><br>
-
-<h1> Papers and work in progress <a name="top"></a> </h1>
-
-<h3> A Multinomial compact-interval restricted Boltzmann machine, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3> 
-<p>Restricted Boltzmann Machines (RBM) are undirected probabilistic graphical models that can be interpreted as stochastic neural networks. In their basic formulation, Boltzmann Machines (BM) involve binary variables. They have found applications in a wide range of learning problems. However, RBMs are generally used as a preliminary phase for other algorithms, providing either data preprocessing or an initialization method for feedforward neural network classifiers. They are not typically considered a standalone solution for classification problems. In this paper, we proposed several variants of the RBM in which the observed variables are assumed to be continuous and bounded. We demonstrated that the underlying models could solve high-dimensional data classification problems without relying on another classification algorithm. The experiments showed that, in addition to having good characteristics as generative data models, the proposed models possess excellent predictive power, outperforming certain standard models commonly used for classification tasks. </p>
-
-<h3> Learning Gaussian Restricted Boltzmann Machine using tensorial decompositions, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3>
-<p> The Boltzmann machine and its variants have demonstrated excellent performance in several object classification and recognition tasks. It involves a very large number of parameters, which complicates training and limits its use in devices with low memory capacity. An important research problem is how to compress the parameters to reduce the storage requirements and, eventually, the training time of the machine. This work focuses on storage compression for efficient inference of the restricted Gaussian Boltzmann machine. Different tensor formats for modeling the interaction terms or weights of a restricted Gaussian Boltzmann machine are proposed and investigated. The objective is to reduce the number of model parameters to save time and memory during training and predictions. It is shown that the weight matrix of the Boltzmann machine, as in the case of several neural network modules, is highly redundant and that by limiting its matrix rank, it is possible to significantly reduce the number of parameters without significantly decreasing the model’s prediction rate. Particularly high performance is achieved with the so-called “matrix product operator” tensor format. </p>
-
-<h3> Compact intervals restricted Boltzmann machine mixture, <span style="font-size: 16px;"> Bruno Monsia & Alejandro Murua</span> </h3>
-
-<p> Boltzmann Machines (BMs) and their variants have traditionally been used as initialization tools for supervised learning models, notably feedforward neural networks. In such settings, they mainly serve as feature extractors or pre-training mechanisms, without being directly employed for classification or clustering tasks. In previous work, we proposed a supervised model based on the Compact Interval Restricted Boltzmann Machine (CIRBM) to address this limitation partially. Despite its potential, a major obstacle remains: the intractability of the normalization constant (partition function) in the Boltzmann distribution, which hinders both inference and parameter estimation. This paper tackles the intractability of the partition function in the CIRBM framework by introducing and evaluating several estimation techniques. We assess the accuracy and computational efficiency of each method through extensive empirical studies. Among the proposed approaches, the Normalization Function Ratio (NFR) estimator demonstrates the best trade-off between precision and computational cost, offering narrow confidence intervals and consistent performance across various settings. Building upon these results, we develop a novel mixture model of Compact Interval Restricted Boltzmann Machines (MixCIRBM) for clustering applications. The model is trained via the Expectation-Maximization (EM) algorithm, combined with gradient-based optimization of the model parameters. Experimental results indicate that the proposed MixCIRBM model outperforms the classical Gaussian Mixture Model (GMM) and K-means algorithm, especially in high-dimensional scenarios, demonstrating its effectiveness as a robust clustering tool. </p>
-
-<h3> Categorical variables selection in risk modeling, <span style="font-size: 16px;"> Bruno Monsia </span> </h3>
-
-<p> In insurance risk modeling, selecting relevant categorical variables is a crucial step in developing accurate, parsimonious, and interpretable predictive models. Indeed, categorical features present different challenges, including high cardinality, multicollinearity, and complex interactions with continuous variables. This study examines statistical and machine learning-based approaches for selecting categorical predictors in insurance risk models. Traditional methods like chi-square testing, information value, and weight of evidence are evaluated alongside modern regularization techniques and tree-based model importance metrics. Special attention is given to encoding strategies, feature engineering, and handling of rare categories. Using real-world insurance datasets, we demonstrate how informed categorical variable selection improves model performance and interpretability of the experimented models. Our findings offer practical guidelines for actuaries, data scientists, and risk professionals seeking to enhance predictive modeling practices in the finance field. </p>
-
-<h3> Superimposed Gaussian mixtures model to characterize the heterogeneity of neurobiological alterations in psycho-pathology, <span style="font-size: 16px;"> <a href="https://criusmm.ciusss-estmtl.gouv.qc.ca/fr/chercheur/pierre-orban">Pierre Orban</a>, <a href="https://www.gerad.ca/fr/people/alejandro-murua">Alejandro Murua</a>  & Bruno Monsia </span> </h3>
-
-</body>
-
-</html> 
