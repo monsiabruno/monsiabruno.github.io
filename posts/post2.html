@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Article by Bruno Monsia on principles of data visualization for better insights."
-    />
+    <meta name="description" content="Blog by Bruno Monsia on principles of data visualization for better insights."/>
+
+    <!-- Charger Mathjax for latex code -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <title>Data Visualization Principles for Better Insights | Bruno Monsia</title>
 
     <link
@@ -104,22 +105,6 @@
         color: #555;
         font-style: italic;
       }
-
-
-       footer {
-      <!-- position: fixed; -->
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f2f2f2;
-      color: #444;
-      text-align: center;
-      font-size: 14px;
-      padding: 12px 0;
-      border-top: 1px solid #ddd;
-    }
-
-
     </style>
   </head>
 
@@ -127,7 +112,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -148,12 +133,12 @@
     <div class="container">
       <div class="post-header">
         <h2>Data Visualization Principles for Better Insights</h2>
-        <p class="post-date">Published on September 25, 2025</p>
+        <!-- <p class="post-date">Published on September 25, 2025</p> -->        
       </div>
 
       <div class="post-content">
         <p>
-          In data science, visualization is not just decoration — it’s a bridge
+          In data science, visualization is not just decoration - it’s a bridge
           between data and understanding. A well-designed chart can reveal
           relationships, trends, and outliers that tables of numbers can’t
           convey. However, effective visualization requires more than technical
@@ -161,14 +146,73 @@
           simplicity, and purpose.
         </p>
 
+        <blockquote>
+          “The greatest value of a picture is when it forces us to notice what
+          we never expected to see.” - John Tukey
+        </blockquote>
+
+        <h4>1. Focus on the Message</h4>
         <p>
-          <strong>Details come soon ...!</strong>
+          Before choosing a chart type, ask: *What story am I trying to tell?*
+          Each visual should answer a specific question. A scatter plot might
+          show correlation, a bar chart comparisons, and a line chart trends
+          over time. Avoid clutter - if an element doesn’t support the message,
+          remove it.
+        </p>
+
+        <h4>2. Simplify the Design</h4>
+        <p>
+          Simplicity is key. Use neutral backgrounds, limit color palettes, and
+          avoid 3D effects. Overly complex visuals distract the reader from the
+          insight. White space helps emphasize important information and gives
+          the eye room to breathe.
+        </p>
+
+        <h4>3. Use Color Thoughtfully</h4>
+        <p>
+          Color is a powerful communication tool. Use it to highlight patterns
+          or categories, not decoration. For accessibility, ensure sufficient
+          contrast and avoid relying solely on color to encode information.
+        </p>
+
+        <img
+          src="images/dataviz_example.png"
+          alt="Example of a clean and effective data visualization"
+        />
+
+        <h4>4. Label Clearly</h4>
+        <p>
+          Every axis, legend, and annotation should be easy to understand at a
+          glance. Ambiguous or missing labels create confusion. If your audience
+          has to guess what a number represents, the visualization has failed.
+        </p>
+
+        <h4>5. Choose the Right Tool</h4>
+        <p>
+          Today, a wide range of tools and libraries make it easier than ever to
+          produce professional visuals - from <strong>matplotlib</strong> and
+          <strong>ggplot2</strong> to <strong>Tableau</strong> and
+          <strong>Power BI</strong>. The key is to match the tool to the goal:
+          quick exploration, interactive dashboards, or publication-ready
+          figures.
+        </p>
+
+        <h4>6. Tell a Story with Data</h4>
+        <p>
+          Visualization becomes powerful when combined with narrative. Guiding
+          the reader through a logical sequence - problem, data, insight,
+          implication - transforms a chart into a story. The goal is not only to
+          inform but also to persuade and inspire action.
+        </p>
+
+        <p>
+          By following these principles, we can create visualizations that
+          empower decision-making and communicate complex findings effectively.
         </p>
 
         <a href="https://monsiabruno.github.io/blogs.html" class="back-link">← Back to Blog</a>
       </div>
+
     </div>
-
-
   </body>
 </html>
