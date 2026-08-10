@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"   content="Article by Bruno Monsia on chi-square independence test."
+    />
+
+
+<!-- Charger Mathjax for latex code -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<title>Comprendre le test d'indépendance du khi-deux (χ²)</title>
+
+<style>
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    line-height:1.7;
+    color:#333;
+    background:#fafafa;
+}
+
+h1,h2{
+    color:#003366;
+}
+
+h1{
+    text-align:center;
+}
+
+blockquote{
+    border-left:5px solid #0066cc;
+    padding-left:20px;
+    background:#f4f8fc;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    margin:20px 0;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#708090;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    text-align:center;
+}
+
+.code{
+    background:#272822;
+    color:#f8f8f2;
+    padding:15px;
+    border-radius:5px;
+    overflow-x:auto;
+    font-family:monospace;
+}
+
+.note{
+    background:#eaf7ea;
+    padding:15px;
+    border-left:5px solid green;
+    margin:20px 0;
+}
+
+.warning{
+    background:#fff3cd;
+    border-left:5px solid orange;
+    padding:15px;
+}
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+  
+/* Centrage du contenu pour les écrans larges */
+     .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+     }   
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1>Comprendre le test d'indépendance du khi-deux (\(\chi^2\))</h1>
+
+<p>
+Le test d'indépendance du khi-deux est l'un des tests statistiques les plus utilisés
+dans les domaines du marketing, de la finance, de la comptabilité et de la gestion des ressources humaines. Il permet de déterminer si deux variables qualitatives sont liées ou indépendantes.
+</p>
+
+<h2>Pourquoi utiliser le test du Khi-deux ?</h2>
+
+<p>
+On souhaite souvent répondre à des questions telles que :
+</p>
+
+<ul>
+<li> <strong> Marketing </strong> : Le sexe influence-t-il l'achat d'un produit ? 1ère variable : Sexe (Femme/Homme); 2ème variable : achat du produit (Oui/Non).
+ </li>
+<li> <strong> Ressources humaines </strong> : Le département influence-t-il la satisfaction des employés ?</li>
+<li> <strong> Finance </strong> : Le niveau de revenu est-il associé au risque de défaut de paiement ?</li>
+<li> <strong> Comptabilité </strong>: Le secteur d'activité influence-t-il l'adoption d'un logiciel comptable ?</li>
+<li> Etc. </li>
+</ul>
+
+<p>
+Lorsque les deux variables sont qualitatives, le test χ² constitue l'outil statistique approprié. Le procédé du test est identique quel que soit le domaine de l'étude. On commence d'abord par formuler les hypothèses du test.
+</p>
+
+<hr>
+
+<h2>Formulation des hypothèses du test</h2>
+
+<p><strong>Hypothèse nulle (H₀)</strong></p>
+
+<blockquote>
+Les deux variables sont indépendantes.
+</blockquote>
+
+<p><strong>Hypothèse alternative (H₁)</strong></p>
+
+<blockquote>
+Les deux variables sont associées.
+</blockquote>
+
+<hr>
+
+<h2>Exemple principal </h2>
+La directrice des ressources humaines d'une grande entreprise publique veut vérifier s'il existe un lien entre la performance à une épreuve de sélection et le rendement au travail.
+
+<table>
+<caption>Répartition de 200 fonctionnaires, selon le résultat obtenu à une épreuve de sélection et le rendement au travail</caption>
+<tr>
+<th>Rendement \ Performance </th>
+<th>Moyen</th>
+<th>Élevé </th>
+<th>Très élevé</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Inférieur</td>
+<td>30</td>
+<td>10</td>
+<td>10</td>
+<td>50</td>
+</tr>
+
+<tr>
+<td>Moyen</td>
+<td>10</td>
+<td>60</td>
+<td>10</td>
+<td>80</td>
+</tr>
+
+<tr>
+<td>Supérieur</th>
+<td>20</th>
+<td>30</th>
+<td>20</th>
+<td>70</th>
+</tr>
+
+<tr>
+<th>Total</th>
+<th>60</th>
+<th>100</th>
+<th>40</th>
+<th>200</th>
+</tr>
+
+</table>
+
+<p>
+Ce tebleau porte le nom de <strong>tableau de contingence</strong> ou <strong>tableau à double entrée</strong>. Ses fréquences sont dites <strong>observées</strong> (\(f_o\)).
+</p>
+ 
+
+<h2>Principe du test</h2>
+
+<p>
+Le test compare les effectifs observés avec les effectifs attendus si les deux variables étaient totalement indépendantes.
+Plus l'écart est important, plus il est probable qu'il existe une association entre les variables.
+</p>
+
+<hr>
+
+<h2>Calcul des effectifs théoriques \(f_t\)</h2>
+
+<p>
+Les effectifs théoriques ou espérés sont les effectifs qu'on aurait obtenu si les deux variables étaient indépendantes. Autrement dit, ce sont les effectifs sous l'hypothèse nulle. L'effectif théorique \(f_t\) de la \(i^{ème}\) ligne et de la \(j^{ème}\) colonne est donné par :
+    \begin{equation}
+        f_t = \frac{\text{Total de la $i^{ème}$ ligne}\times \text{Total de la $j^{ème}$ colonne}}{\text{Nombre total des données}}
+    \end{equation}
+
+</p>
+
+<div class="note">
+
+Exemple :
+
+Pour la cellule rendememt moyen et le niveau de performance élevé, on a : 
+
+<br><br>
+
+ \(f_t\) = (80 × 100) / 200 = 40
+
+</div>
+
+<table>
+<caption> Tableau des effectifs théoriques </caption>
+<tr>
+<th>Rendement \ Performance </th>
+<th> Moyen</th>
+<th> Élevé </th>
+<th> Très élevé</th>
+<th> Total</th>
+</tr>
+
+<tr>
+<td>Inférieur</td>
+<td>15</td>
+<td>25</td>
+<td>10</td>
+<td>50</td>
+</tr>
+
+<tr>
+<td>Moyen</td>
+<td>24</td>
+<td>40</td>
+<td>16</td>
+<td>80</td>
+</tr>
+
+<tr>
+<td>Supérieur</th>
+<td>21</th>
+<td>35</th>
+<td>14</th>
+<td>70</th>
+</tr>
+
+<tr>
+<th>Total</th>
+<th>60</th>
+<th>100</th>
+<th>40</th>
+<th>200</th>
+</tr>
+
+</table>
+
+<hr>
+
+
+<h2>Conditions d'application</h2>
+
+<ul>
+<li>Échantillon aléatoire.</li>
+
+<li>Les observations doivent être indépendantes. En particulier, chaque individu apparaît une seule fois. </li>
+
+<li>Chaque effectif théorique \(f_t\) doit être plus grand que 5.</li>
+
+</ul>
+
+<div class="warning">
+
+Si ces conditions ne sont pas respectées, il faut :
+<ul>
+<li>Fusionner certaines catégories. </li>
+
+<li> Essayer le test exact de Fisher (notamment dans un tableau de contingence \(2\times 2\)).</li>
+
+</ul>
+
+</div>
+
+<hr>
+
+<h2>Statistique du test</h2>
+
+<p>
+	\begin{equation}
+            \chi^2 = \sum \frac{(f_o-f_t)^2}{f_t}
+	\end{equation}
+</p>
+
+Cette statistique mesure l'écart global entre les données observées et celles attendues sous l'hypothèse d'indépendance.
+
+</p>
+
+<p>
+En reprenant l'exemple principal, l'estimation de cette statistique donne :
+\(\hat{\chi}^2 = \frac{(30-15)^2}{15} +  \frac{(10-25)^2}{25} +  \frac{(10-10)^2}{10} +  \frac{(10-24)^2}{24} +  \frac{(60-40)^2}{40} +  \frac{(10-16)^2}{16} +  \frac{(20-21)^2}{21} +  \frac{(30-35)^2}{35} +  \frac{(20-14)^2}{14} = 47,75\)
+</p>
+
+
+<hr>
+
+<h2>Interprétation des résultats</h2>
+
+<p>
+Sous l'hypothèse nulle, la statistique de test \(\chi\sim \chi_{\nu}\). \(\nu\) est le nombre de dégrés de liberté. \(\nu = (l-1) \times (c-1)\) où \(l\) est le nombre de catégories de la première variable, \(c\) est le nombre de catégories de la deuxième variable. Dans le cas de notre exemple, \(l=3\), \(c=3\), donc \(\nu=4\).
+</p>
+
+<p>
+La valeur critique du test dépend du seuil de signification \(\alpha\) choisi pour le test et du nombre de dégrés de literbé \(\nu\). Elle est notée par \(\chi_{\alpha,\nu}\). On rejette l'hypothèse nulle si \(\hat{\chi}>\chi_{\alpha,\nu}\).
+</p>
+
+<figure>
+  <figcaption> <strong>Zone de rejet VS. Zone de non rejet</strong></figcaption>
+  <img src="images/distribution-khi2.png" alt="Zone de rejet VS zone de non rejet">  
+</figure>
+
+<p>
+On peut utiliser une table de valeurs critiques de \(\chi^2\) ou un logiciel statistique (R ou Python par exemple) afin de déterminer la valeur critique correspondante au test effectué. Un extrait de valeurs critiques de \(\chi^2\) est présenté ci-après :
+</p>
+<figure>
+  <figcaption> <strong>Extrait de table de valeurs critiques de \(\chi^2\)</strong></figcaption>
+  <img src="images/table-khi2.png" alt="Zone de rejet VS zone de non rejet">  
+</figure>
+
+<p> Ainsi avec un seuil de signification \(\alpha=0,05\), la valeur critique pour notre exemple principal est \(\chi_{0,05;4}=9,49\). Puisque \(\hat{\chi}^2=47,75\), alors \(\hat{\chi}^2>\chi_{0,05;4}\). On rejette donc l'hypothèse nulle d'indépendance entre les deux variables au seuil de signification \(\alpha=0,05\). Il y a donc un lien entre le niveau de performance au travail et le résultat obtenu à l'épreuve lors du processus de recrutement.
+</p>
+
+<h2> Utilisation des logiciels R et Python pour le test de khi-deux</h2>
+
+<h3> Evec le logiciel R</h3>
+
+
+<div class="code">
+
+<p>
+tab <- matrix(c(30,10,10,10,60,10,20,30,20), nrow=3, byrow=TRUE)
+</p>
+
+<p>
+chisq.test(tab)
+</p>
+
+</div>
+
+Le logiciel fournit automatiquement :
+
+</p>
+
+<ul>
+
+<li>la statistique \(\chi^2\) ;</li>
+
+<li>les degrés de liberté (df) ;</li>
+
+<li>la valeur-p (la valeur-p peut être aussi utilisée pour la décision finale).</li>
+
+</ul>
+
+
+<table>
+
+<tr>
+<th>Valeur-p</th>
+<th>Conclusion</th>
+</tr>
+
+<tr>
+<td>p < 0,05</td>
+<td>On rejette H₀ : les variables sont associées.</td>
+</tr>
+
+<tr>
+<td>p ≥ 0,05</td>
+<td>On ne rejette pas H₀ : aucune preuve d'association.</td>
+</tr>
+
+</table>
+
+
+<h3> Avec le logiciel Python</h3>
+
+
+<div class="code">
+<pre><code>
+# Create your observed data table (Contingency Table)
+observed = np.array([[30, 10, 10],[10, 60, 10], [20,30,20]])
+# Run the Chi-Square test
+# The function automatically calculates expected values and degrees of freedom
+chi2_stat, p_val, dof, expected = chi2_contingency(observed)
+# Decision making
+alpha = 0.05
+if p_val < alpha:
+    		print("Result: Reject the Null Hypothesis (Variables are significantly associated).")
+else:
+    print("Result: Fail to reject the Null Hypothesis (Variables are independent).")
+</code></pre>
+</div>
+
+<p>
+Le test d'indépendance du khi-deux permet de vérifier l'existence d'une association entre deux variables qualitatives. Lorsque le test est statistiquement significatif, il ne fournit pas la force de l'association des variables impliquées. Pour ce faire, il existe des grandeurs permettant de mesurer le degré de liaison des variables. Nous aborderons en particulier le coefficient V de Cramér.
+</p>
+
+
+<hr>
+
+<h2>Coefficient V de Cramér</h2>
+Il mesure le degré d'association entre les deux variables qualitatives si le test du khi-2 est statistiquement significatif. Il varie entre 0 et 1 et est défini par :
+\begin{equation}
+        V = \sqrt{\frac{\chi^2}{n(k-1)}} \ \ \ \ \ \ \text{où}
+\end{equation}
+\(n\) représente la taille de l'échantillon et \(k\) est le plus petit nombre de lignes ou colonnes (\(k=\min\{l;c\}\)). 
+
+
+<table>
+
+<tr>
+<th>Valeur du coefficient de cramér</th>
+<th>Intensité du lien</th>
+</tr>
+
+<tr>
+<td>0,000 - 0,045 </td>
+<td> Très faible</td>
+</tr>
+
+<tr>
+<td>0,045 - 0,090</td>
+<td>Faible</td>
+</tr>
+
+<tr>
+<td>0,090 - 0,180 </td>
+<td>Moyenne </td>
+</tr>
+
+<tr>
+<td>0,180 - 0,360 </td>
+<td>Forte </td>
+</tr>
+
+<tr>
+<td>0,036 - 1,000 </td>
+<td>Très forte </td>
+</tr>
+
+</table>
+
+<p>
+En reprenant notre exemple principal, on détermine le V de Cramér associé par : \( V = \sqrt{\frac{47,75}{200\times 2}} = 0,12\). Le lien d'association entre les deux variables est donc relativement fort.
+</p>
+
+<p>
+Évidemment, si le test n'est pas statistiquement significatif, il n'y a pas lieu de calculer le coefficient de Cramér. 
+</p>
+
+<hr>
+
+<h2>Applications en entreprise</h2>
+
+<ul>
+
+<li><strong>Marketing :</strong> comportement d'achat selon le profil des clients.</li>
+
+<li><strong>Finance :</strong> risque de défaut selon la catégorie de revenu.</li>
+
+<li><strong>Comptabilité :</strong> adoption d'un ERP selon le secteur d'activité.</li>
+
+<li><strong>Ressources humaines :</strong> satisfaction selon le département.</li>
+
+</ul>
+
+<hr>
+
+<h2>À retenir</h2>
+
+<ul>
+
+<li>Le test \(\chi^2\) analyse la relation entre deux variables qualitatives.</li>
+
+<li>Il compare les effectifs observés aux effectifs attendus.</li>
+
+<li>La décision repose sur la valeur-p.</li>
+
+<li>Le V de Cramér permet de mesurer l'intensité de l'association.</li>
+
+<li>Ce test est un outil incontournable en analyse de données appliquée.</li>
+
+</ul>
+
+
+<h2>Référence</h2>
+<ul>
+
+<li>Freedmann, D., Pisani, R., and Purves, R. (2007). Statistics. W. W. Norton & Company, Inc.</li>
+
+<li>Luc A., Pépin, J.-N. (2023). Méthodes Quantitatives, Applications à la recherche en sciences humaines. ERPI.</li>
+</ul>
+
+<a href="https://monsiabruno.github.io/blogs.html" class="back-link">← Back to Blog</a>
+
+<div class="footer">
+
+© Bruno Monsia
+
+</div>
+
+</body>
+</html>

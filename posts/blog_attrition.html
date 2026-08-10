@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Article by Bruno Monsia attrition problem."
+    />
+
+
+<!-- Charger Mathjax for latex code -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<title> Phénomène d'attrition </title>
+
+
+
+<link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- Highlight.js for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+<style>
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    line-height:1.7;
+    color:#333;
+    background:#fafafa;
+    text-align: justify;
+}
+
+
+
+
+h1,h2{color:#003366;
+}
+
+h1{
+    text-align:center;
+}
+
+blockquote{
+    border-left:5px solid #0066cc;
+    padding-left:20px;
+    background:#f4f8fc;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    margin:20px 0;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#708090;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+}
+
+.code{
+    background:#272822;
+    color:#f8f8f2;
+    padding:15px;
+    border-radius:5px;
+    overflow-x:auto;
+    font-family:monospace;
+}
+
+.note{
+    background:#eaf7ea;
+    padding:15px;
+    border-left:5px solid green;
+    margin:20px 0;
+}
+
+.warning{
+    background:#fff3cd;
+    border-left:5px solid orange;
+    padding:15px;
+}
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+  
+/* Centrage du contenu pour les écrans larges */
+     .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+     }   
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Le phénomène d'attrition : ses causes, ses conséquences</h1> 
+
+<h2>Introduction</h2>
+<p>
+Le phénomène d'attrition désigne la perte progressive de participants, d'unités ou d'observations au cours d'une étude ou d'un processus. Le terme est utilisé dans plusieurs domaines, avec des significations légèrement différentes.
+</p>
+
+<p>
+En <strong>statistique </strong>, l'attrition correspond aux participants qui quittent l'étude avant son terme ou qui deviennent injoignables dans les études longitudinales, les essais cliniques et les enquêtes.Il est fréquent en <strong>recherche clinique</strong>, en <strong>santé publique</strong>, en <strong>sciences sociales</strong> et dans les <strong>enquêtes de suivi</strong>.
+</p>
+
+<p>
+En <strong> ressources humaines</strong>, l'attrition désigne la réduction naturelle des effectifs d'une organisation lorsque des employés partent (retraite, démission, décès) sans être remplacés. Par <strong> exemple</strong>, lorsqu'une entreprise compte 500 employés et perd 20 employés au cours de l'année sans embauche, elle connaît une attrition de 4 %.
+</p>
+
+<p>
+En <strong>marketing</strong>, l'attrition (ou <strong>churn</strong>) désigne la perte de clients lorsqu'ils cessent d'utiliser un service ou d'acheter les produits d'une entreprise. Ce phénomène est particulièrement fréquent dans les secteurs reposant sur des abonnements, tels que les logiciels en mode SaaS (par exemple, Zoom ou SAS) ainsi que les services de télécommunications (comme Virgin Plus ou Chatr). L'attrition représente un enjeu stratégique majeur, car elle se traduit par une diminution des revenus, une augmentation des coûts d'acquisition de nouveaux clients et, à long terme, une réduction de la rentabilité de l'entreprise. Pour limiter son impact, il est essentiel d'identifier les facteurs qui en sont à l'origine avant de mettre en œuvre des stratégies de fidélisation adaptées.
+</p>
+
+<p>
+Dans ce article, nous n'aborderons pas les aspects marketing de la fidélisation des clients. Nous nous concentrerons plutôt sur les causes de l'attrition d'un point de vue <strong>statistique</strong>, les mécanismes qui la sous-tendent et les conséquences qu'elle peut avoir sur les analyses de données et les modèles statistiques. Comprendre ces mécanismes est indispensable pour produire des analyses fiables, interpréter correctement les résultats et éviter les biais susceptibles de compromettre la qualité des décisions fondées sur les données.
+</p>
+
+<div class="note">
+<strong>Exemple :</strong> Une étude débute avec 1 000 participants. Après cinq ans, seuls 800 sont encore suivis. Le taux d'attrition est de 20 %.
+</div>
+
+<h2>Les principales causes de l'attrition </h2>
+Ici, il est question d'identifier les raisons qui peuvent amener les participants à quitter une étude. Ces raisons sont diverses et peuvent être entre autres : 
+<ul> 
+<li> le déménagement </li>
+<li> la perte de contact </li>
+<li> un manque de motivation à poursuivre l'étude</li>
+<li> de Contraintes personnelles (indisposition) </li>
+<li> de maladie ou décès </li>
+</ul>
+
+<h2>Conséquences de l'attrition</h2>
+Une attrition importante peut entraîner :
+<ul>
+<li> Diminution de la puissance statistique du fait de la perte des individus </li>
+<li> Risque de biais d'attrition (<strong>attrition bias</strong>) : Par exemple, si les participants les plus malades abandonnent davantage une étude clinique, les résultats peuvent surestimer l'efficacité du traitement. </li>
+<li>Réduction de la représentativité de l'échantillon </li>
+</ul>
+Comme on peut le voir, l'attrition contitue une grande problématique en statistique et en science sociale et il est important de limiter ses conséquences afin de garentir la pertinence des analyses.
+<p> Il arrive parfois de confondre l'attrition à la censure. Cependant, ces deux concepts sont différents et ne sont forcément pas liés à un même objectif d'analyse. La section suivante élucide les principales différences qui existent entre les deux notions. </p>
+
+<h2> Attrition VS. censure </h2>
+<p> Il est important de notifier que l'attrition et la censure sont deux concepts différents, bien qu'ils impliquent tous deux des données incomplètes. La principale différence réside dans la nature de l'information perdue et les méthodes statistiques utilisées pour la traiter. Le tableau suivant mets en exergue queques principales différences entre les deux notions. 
+</p>
+
+<table>
+<tr>
+<th> Critère </th> <th>Attrition </th> <th> Censure </th>
+</tr>
+
+<tr>
+<td>Définition </td> <td>Perte de participants au cours de l'étude. L'attrition produit des données manquantes</td> <td>L'événement d'intérêt n'est pas observé complètement, mais une information partielle est disponible. La censure produit une information partielle sur le temps jusqu'à l'événement.</td>
+</tr>
+
+<tr>
+<td>Domaine principal</td> <td> Études longitudinales, enquêtes, essais cliniques.</td> <td>Analyse de survie, études de durée (temps jusqu'à un événement).</td>
+</tr>
+
+<tr>
+<td>Variable (s) d'intérêt</td> <td> Peut être variée (s).</td> <td> Temps de survie </td>
+</tr>
+
+
+<tr>
+<td> Ce qui est perdu </td> <td>Les observations futures du participant. </td>  <td>La date exacte de l'événement. </td>
+</tr>
+
+<tr>
+<td>Conséquence</td> <td> Données manquantes.</td> <td>Temps de survie partiellement observé.</td>
+</tr>
+
+
+<tr>
+<td>Méthodes d'analyse </td> <td> Imputation multiple, modèles mixtes, pondération, analyses de sensibilité.</td> <td>Estimateur de Kaplan-Meier, modèle de Cox, modèles paramétriques de survie.</td>
+</tr>
+
+</table>
+
+<p>Cependant les deux notions peuvent <strong>être confondues dans certains cas</strong>. Lorsque la vériable d'intérêt est <strong>le temps </strong> de survenance d'un événement (maladie, décès, annulation de contrat d'assurance, etc.), l'attrition entraîne généralement la censure. 
+
+<p>Considérons <strong> par exemple </strong> une étude sur le temps jusqu'à une rechute (maladie après un certain temps de guérison). Supposons qu'un patient quitte l'étude après deux ans. À son départ, il n'a pas rechuté.
+<ul>
+<li>Pour <strong>l'analyse de survie :</strong> ledit patient est censuré à droite au temps de deux ans.  </li>
+<li> Pour le <strong>suivi de cohorte :</strong> il s'agit aussi d'une attrition (perte de suivi).</li>
+<li>Simplifier les questionnaires. </li>
+<li>Prévoir des incitatifs (compensation financière, cartes-cadeaux).</li>
+</ul>
+Ainsi, la même situation peut être décrite de deux façons selon l'objectif de l'analyse.  </p>
+
+ </p>
+
+
+<h2> Comment limiter l'attrition ? </h2>
+
+<ul>
+<li> Maintenir le contact avec les participants. </li>
+<li> Envoyer des rappels. </li>
+<li>Simplifier les questionnaires. </li>
+<li>Prévoir des incitatifs (compensation financière, cartes-cadeaux).</li>
+</ul>
+
+<h2> Comment traiter statistiquement l'attrition ? </h2>
+
+<p> Plusieurs approches existent selon le mécanisme des données manquantes : </p>
+<ul>
+<li> Analyse en intention de traiter (<strong>Intention-To-Treat, ITT</strong>) dans les essais cliniques. </li>
+<li>Imputation multiple pour remplacer les valeurs manquantes.</li>
+<li> Modèles mixtes (<strong>GLMM, LMM</strong>), qui peuvent gérer efficacement des données manquantes sous l'hypothèse <strong>Missing At Random</strong> (MAR).</li>
+<li> Pondération par probabilité inverse (Inverse Probability Weighting).</li>
+<li> <strong>Analyses de sensibilité</strong> pour évaluer l'impact des abandons. </li>
+</ul>
+
+<figure>
+  <img src="images/attrition.png" alt="Problème d'attrition" style="width: 95%; height: auto;">  
+</figure>
+
+
+<h2> Conclusion </h2>
+
+<p>
+Le phénomène d'attrition est un enjeu majeur dans les études longitudinales, les essais cliniques, les enquêtes et les analyses de données. Il peut réduire la puissance statistique et introduire des biais si les abandons ne sont pas aléatoires. Des méthodes comme les modèles mixtes, l'imputation multiple ou la pondération permettent d'en limiter les effets, mais la meilleure stratégie reste de prévenir l'attrition dès la conception de l'étude.</p>
+
+<a href="https://monsiabruno.github.io/blogs.html" class="back-link">← Back to Blog</a>
+
+<div class="footer">
+
+<p>&copy; <span id="year"></span> Bruno Monsia. Tous droits réservés.</p>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</div>
+
+</body>
+</html>
+
